@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Hands-on</title>
+</head>
+<body>
+    <h1 id="old">To create a button that changes text</h1>
+    <button onclick="textChange()">Text Change</button>
+
+    <div id="div1">
+        <h2 id="first">hii thats me!</h2>
+        <button id="button1">Change it</button>
+    </div>
+
+    <div id="div2">
+        <h3 class="second">this is my project</h3>
+        <p></p>
+        <button class="button2">click on it</button>
+    </div>
+
+    <script>
+        function textChange() {
+            document.getElementById('old').textContent = "Text is now changed by clicking on this button";
+        }
+
+        const but1 = document.querySelector("#button1");
+        but1.onclick = () => {
+            document.getElementById('first').textContent = "Text is now changed by clicking on button1";
+        };
+
+        const btn2 = document.querySelector(".button2");
+        btn2.addEventListener("click", () => {
+            document.getElementsByClassName('second')[0].textContent = "Text is now changed by clicking on button2";
+        });
+
+        btn2.addEventListener("click",()=>{
+            document.querySelector(".second").style.color="pink";
+        });
+ 
+        let ele=document.createElement('h1');
+        ele.innerHTML="<i>Hello World!</i>";
+        document.querySelector("#div2").prepend(ele);
+
+    </script>
+</body>
+</html>
